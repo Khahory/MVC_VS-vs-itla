@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "About";
+    @model MVC_VS.Models.Materias
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+<form action="Capturar" method="post">
+    <p>Mi for</p>
+    @for (int i = 0; i < Model.candidadesMateriaArray.Count; i++)
+    {
+        
+        <input type="text" name="nombre" value="@i" />
+        <br />
+        for (int j = 0; j < Model.candidadesTareasArray.Count/Model.candidadesMateriaArray.Count; j++)
+        {
+            
+            <label>Tarea</label>
+            <input type="text" name="tareas" value="@j" />
+        }
+        <br />
+        <br />
+    }
+    @Model.Nombre
+        
+    <p>Array de los nombre</p>
+    @Model.nombres.Count
+    <br />
+
+    <p>Array de la cantidad</p>
+    @Model.candidadesMateriaArray.Count
+    <br />
+
+    <p>Array de las tareas</p>
+    @Model.candidadesTareasArray.Count
+    <br />
+    <input type="submit" name="name" value="Boton" />
+</form>
+
+
+
+
+
+
